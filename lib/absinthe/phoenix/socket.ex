@@ -37,6 +37,7 @@ defmodule Absinthe.Phoenix.Socket do
 
     schema = Keyword.get(opts, :schema)
     pipeline = Keyword.get(opts, :pipeline)
+    pubsub_ops_module = Keyword.get(opts, :pubsub_ops_module,  Phoenix.PubSub)
 
     quote do
       channel(
@@ -44,7 +45,8 @@ defmodule Absinthe.Phoenix.Socket do
         Absinthe.Phoenix.Channel,
         assigns: %{
           __absinthe_schema__: unquote(schema),
-          __absinthe_pipeline__: unquote(pipeline)
+          __absinthe_pipeline__: unquote(pipeline),
+          __pubsub_ops_module__: unquote(pubsub_ops_module)
         }
       )
     end

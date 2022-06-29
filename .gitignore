@@ -27,3 +27,7 @@ absinthe_phoenix-*.tar
 
 # Misc.
 .DS_Store
+/.idea/.gitignore
+/.idea/absinthe_phoenix.iml
+/.idea/modules.xml
+/.idea/vcs.xml
