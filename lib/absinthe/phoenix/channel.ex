@@ -97,7 +97,8 @@ defmodule Absinthe.Phoenix.Channel do
       |> Keyword.get(:context, %{})
       |> Map.get(:pubsub, socket.endpoint)
 
-    apply(pubsub_ops_module, :unsubscribe, [socket.pubsub_server, doc_id])
+
+    pubsub_ops_module.subscribe(socket.pubsub_server, doc_id)
     Absinthe.Subscription.unsubscribe(pubsub, doc_id)
     {:reply, {:ok, %{subscriptionId: doc_id}}, socket}
   end
@@ -111,17 +112,12 @@ defmodule Absinthe.Phoenix.Channel do
           socket
 
         :ok =
-          apply(
-            pubsub_ops_module,
-            :subscribe,
-            [
-              pubsub_server,
-              topic,
-              [
-                metadata: {:fastlane, transport_pid, serializer, []},
-                link: true
-              ]
-            ]
+
+          pubsub_ops_module.subscribe(
+            pubsub_server,
+            topic,
+            metadata: {:fastlane, transport_pid, serializer, []},
+            link: true
           )
 
 
