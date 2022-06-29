@@ -117,8 +117,10 @@ defmodule Absinthe.Phoenix.Channel do
             [
               pubsub_server,
               topic,
-              metadata: {:fastlane, transport_pid, serializer, []},
-              link: true
+              [
+                metadata: {:fastlane, transport_pid, serializer, []},
+                link: true
+              ]
             ]
           )
 
