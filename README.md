@@ -7,6 +7,12 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Last Updated](https://img.shields.io/github/last-commit/absinthe-graphql/absinthe_phoenix.svg)](https://github.com/absinthe-graphql/absinthe_phoenix/commits/master)
 
+## Changes in this fork
+
+1. added in :pubsub_ops_module option for the Socket configuration. This PubSub module will be used for all subscribe/unsubscribe function calls
+2. 
+
+
 This package integrates Absinthe subscriptions with Phoenix, so that you can use subscriptions via websockets.
 
 For getting started guides on subscriptions see: https://hexdocs.pm/absinthe/subscriptions.html

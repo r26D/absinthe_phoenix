@@ -31,3 +31,4 @@ absinthe_phoenix-*.tar
 /.idea/absinthe_phoenix.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+/.idea/libraries
